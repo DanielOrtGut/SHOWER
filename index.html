@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #ffffff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #000000;
+            border-radius: 50%;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-content {
+            position: relative;
+            margin-left: 30px;
+            border: 2px solid #000;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .timeline-content h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+
+        .timeline-content p {
+            margin: 5px;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            float: right;
+            margin-left: 0;
+            margin-right: 30px;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-left: 10px solid #000000;
+            border-bottom: 10px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -10px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-right: 10px solid #000000;
+            border-bottom: 10px solid transparent;
+        }
+
+        /* TITULO*/
+        .centered-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+
+        }
+
+        .centered-div h1 {
+            font-size: 50px;
+            text-align: center;
+
+        }
+
+        /* TABLA*/
+        .browser-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .browser-table th {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .browser-table td {
+            padding: 2px;
+        }
+
+        .browser-name {
+            font-weight: bold;
+        }
+
+        .browser-description {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body class="shower list">
+    <header class="caption">
+        <img class="cover" src="pictures/FONDO1.jpg" background-attachment: fixed; background-repeat: no-repeat; height:
+            100%; width: 100%;>
+
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>TODO SOBRE LO DEL INTERNET</h2>
+        <br>
+        <p style="color:rgb(255, 255, 255)">Integrantes:</p>
+        <p>Daniel Ortega</p>
+        <p>Robinson Penagos</p>
+        <p>Jonatan Novoa</p>
+
+        <figure>
+            <img class="cover" src="pictures/Primera Imgen.png" width="1000"
+                alt="Hands on the orange typewriter in a park">
+        </figure>
+        <style>
+            #cover h2 {
+                margin: 120px 0 0;
+                color: rgb(255, 255, 255);
+                text-align: center;
+                font-size: 70px;
+            }
+
+            #cover p {
+                margin: 10px 0 0;
+                text-align: center;
+                color: white;
+                font-style: italic;
+                font-size: 20px;
+            }
+
+            #cover p a {
+                color: white;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="./pictures/IMGS/SLIDE2.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(51, 200, 246);">Internet</h2>
+        <p style="color: aliceblue;">Internet es una red global de computadoras interconectadas que utilizan protocolos
+            de comunicación estándar para transmitir y recibir datos. Es una red descentralizada y abierta que permite
+            la comunicación y el intercambio de información entre personas, empresas, instituciones y dispositivos en
+            todo el mundo. Internet proporciona una amplia variedad de servicios y recursos, como el correo electrónico,
+            la transferencia de archivos, la navegación web, las redes sociales y mucho más.</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+
+        <div class="centered-div">
+            <h1 style="color: white;">LINEA DEL TIEMPO</h1>
+        </div>
+
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: orange;">1960: Nacimiento</h2>
+                    <p>Surge la idea de una red global de comunicaciones.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: red;">1969: </h2>
+                    <p>Se establece la primera conexión entre dos computadoras, creando la precursora de Internet
+                        llamada ARPANET.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(255, 102, 0);">1971:</h2>
+                    <p>Se envía el primer correo electrónico.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(19, 115, 249);">1973: </h2>
+                    <p>Se desarrolla el primer protocolo de transferencia de archivos, el File Transfer Protocol (FTP).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(26, 245, 209);">1983:</h2>
+                    <p>Se introduce el protocolo de control de transmisión/protocolo de Internet (TCP/IP) como el
+                        estándar para la comunicación en Internet.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(250, 166, 10);">1989: </h2>
+                    <p>Tim Berners-Lee propone el concepto de la World Wide Web (WWW).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: red;">1990::</h2>
+                    <p>Se desarrolla el primer navegador web, llamado WorldWideWeb.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(255, 102, 0);">1991: </h2>
+                    <p>Se lanza al público el primer servidor web y el primer sitio web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">d
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color:rgb(19, 115, 249);">1993:</h2>
+                    <p>Se introduce el navegador Mosaic, que populariza el uso de la web.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(26, 245, 209);">1994: </h2>
+                    <p>Se funda Yahoo! como un directorio de sitios web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color:rgb(250, 166, 10);">1995:</h2>
+                    <p>Se lanza Windows 95 con soporte para TCP/IP integrado, lo que impulsa la adopción masiva de
+                        Internet.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: red;">1995: </h2>
+                    <p>Se funda Amazon.com como una tienda en línea.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color:rgb(255, 102, 0);">1998:</h2>
+                    <p>Se crea Google como un motor de búsqueda.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(19, 115, 249);">1999: </h2>
+                    <p>Se lanza Napster, un servicio pionero de intercambio de archivos de música peer-to-peer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color:rgb(250, 166, 10);">2001:</h2>
+                    <p>Se lanza Wikipedia, una enciclopedia en línea de colaboración abierta.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: red;">2004: </h2>
+                    <p>Se lanza Facebook, inicialmente dirigido a estudiantes universitarios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color:rgb(255, 102, 0);">2005:</h2>
+                    <p>Se lanza YouTube, una plataforma para compartir videos en línea.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(19, 115, 249);">2006: </h2>
+                    <p>e crea Twitter, una plataforma de microblogging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color:rgb(26, 245, 209);">2007:</h2>
+                    <p>Se presenta el primer iPhone, que impulsa el uso de Internet móvil.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(250, 166, 10);">2010: </h2>
+                    <p>Se lanza Instagram, una red social centrada en compartir fotos y videos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color:red;">2011:</h2>
+                    <p>Se lanza Snapchat, una aplicación de mensajería y redes sociales con mensajes efímeros.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(255, 102, 0);">2013: </h2>
+                    <p>Edward Snowden revela el programa de vigilancia masiva de la Agencia de Seguridad Nacional de EE.
+                        UU.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color:rgb(19, 115, 249);;">2016:</h2>
+                    <p>Se lanza Pokémon Go, un juego de realidad aumentada para dispositivos móviles que alcanza una
+                        gran popularidad.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2>Evento 2</h2>
+                    <p>Descripción del evento 2.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color: rgb(26, 245, 209);">2020:</h2>
+                    <p>La pandemia de COVID-19 aumenta la dependencia de Internet para el trabajo remoto, la educación
+                        en línea y el entretenimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <img class="cover" src="pictures/FondoLinea.jpg" width="3000" alt="3000">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h2 style="color:rgb(250, 166, 10);">2021: </h2>
+                    <p>Se lanza Starlink, un proyecto de SpaceX para proporcionar acceso a Internet de alta velocidad a
+                        través de satélites.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/Protocolo.jpg" width="3000" alt="3000">
+
+        <div class="centered-div">
+            <h1 style="color: white;">PROTOCOLOS</h1>
+        </div>
+
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/Protocolo.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Protocolos usados en Internet</h2>
+        <p style="color: white;">Existen varios protocolos que hacen posible la comunicación en Internet. El más
+            conocido es TCP/IP, pero también se usan otros como FTP, HTTP, HTTPS, SMTP y POP3.</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/Protocolo.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Protocolo de Internet (IP): </h2>
+        <p style="color: rgb(233, 233, 233);">Es el protocolo fundamental en Internet. Proporciona direcciones únicas
+            (direcciones IP) a cada dispositivo conectado a la red y establece cómo se envían y se reciben los paquetes
+            de datos.</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/Protocolo.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Protocolo de Transferencia de Hipertexto (HTTP): </h2>
+        <p style="color: rgb(233, 233, 233);">Es el protocolo utilizado para la transferencia de datos en la World Wide
+            Web. Define cómo se solicitan y se entregan los recursos, como páginas web, imágenes y archivos. HTTP está
+            basado en el modelo cliente-servidor</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/Protocolo.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Protocolo de Transferencia de Archivos (FTP): </h2>
+        <p style="color: rgb(233, 233, 233);">Es el protocolo utilizado para la transferencia de datos en la World Wide
+            Web. Define cómo se solicitan y se entregan los recursos, como páginas web, imágenes y archivos. HTTP está
+            basado en el modelo cliente-servidor</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/Protocolo.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Protocolo de Correo Simple (SMTP): </h2>
+        <p style="color: rgb(233, 233, 233);">Es el protocolo utilizado para el envío de correos electrónicos. SMTP se
+            encarga de enviar los correos desde el servidor de correo del remitente al servidor de correo del
+            destinatario.</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/Protocolo.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Protocolo de Acceso a Mensajes (IMAP y POP): </h2>
+        <p style="color: rgb(233, 233, 233);">Son protocolos utilizados para acceder a los correos electrónicos desde un
+            servidor. IMAP (Protocolo de Acceso a Mensajes de Internet) permite gestionar los correos electrónicos en el
+            servidor, mientras que POP (Protocolo de Oficina de Correo) descarga los correos al cliente y los elimina
+            del servidor.</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/Protocolo.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Protocolo de resolución de nombres de dominio (DNS): </h2>
+        <p style="color: rgb(233, 233, 233);">Es el protocolo encargado de traducir los nombres de dominio (como
+            www.ejemplo.com) en direcciones IP. Permite que los usuarios accedan a sitios web utilizando nombres de
+            dominio en lugar de direcciones IP numéricas.</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/IMGS/NUEBAAAAAA.png" width="3000" alt="3000">
+
+        <div class="centered-div">
+            <h1 style="color: white;">NAVEGADORES</h1>
+        </div>
+
+    </section>
+
+    <section class="slide">
+        <table class="browser-table">
+            <tr>
+                <th colspan="2">Los navegadores más populares</th>
+            </tr>
+            <tr>
+                <td class="browser-name">Google Chrome</td>
+                <td class="browser-description">El navegador más popular del mundo por su rapidez y fácil integración
+                    con otros servicios de Google.</td>
+            </tr>
+            <tr>
+                <td class="browser-name">Mozilla Firefox</td>
+                <td class="browser-description">Un navegador gratuito y de código abierto conocido por su seguridad y
+                    personalización.</td>
+            </tr>
+            <tr>
+                <td class="browser-name">Microsoft Edge</td>
+                <td class="browser-description">El navegador por defecto en Windows 10. Permite navegación rápida y
+                    tiene una interfaz intuitiva.</td>
+            </tr>
+            <tr>
+                <td class="browser-name">Safari</td>
+                <td class="browser-description">El navegador de Apple es rápido y eficiente en dispositivos de la marca.
+                    Se integra con el ecosistema Apple.</td>
+            </tr>
+        </table>
+
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/IMGS/Imagen6.jpg" width="3000" alt="3000">
+
+        <div class="centered-div">
+            <h1 style="color: white;">NAVEGADORES</h1>
+        </div>
+
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/IMGS/Imagen6.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Conectividad a Internet</h2>
+        <p style="color: rgb(233, 233, 233);">Para conectarse a Internet hay varias opciones como la conexión por cable y la inalámbrica. Cada una tiene sus ventajas y desventajas.</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/IMGS/Imagen6.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Conexión por cable</h2>
+        <p style="color: rgb(233, 233, 233);">La conexión por cable es la más rápida y segura, pero puede limitar el movimiento.</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/IMGS/Imagen6.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">Conexión inalambrica</h2>
+        <p style="color: rgb(233, 233, 233);">La conexión inalámbrica brinda mayor movilidad pero es menos rápida.</p>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/IMGS/WIFI.jpg" width="3000" alt="3000">
+
+        <div class="centered-div">
+            <h1 style="color: white;">WIFI</h1>
+        </div>
+
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/IMGS/WIFI.jpg" width="3000" alt="3000">
+        <h2 style="color: rgb(233, 233, 233);">¿Qué es el Wi-Fi?
+
+        </h2>
+        <p style="color: rgb(233, 233, 233);">El Wi-Fi se basa en la transmisión de datos a través de ondas de radio de alta frecuencia. Utiliza puntos de acceso inalámbricos, conocidos como routers Wi-Fi, para establecer una red local inalámbrica (WLAN) que permite a los dispositivos compatibles conectarse y comunicarse entre sí.</p>
+    </section>
+
+    
+    <section class="slide">
+        <img class="cover" src="pictures/IMGS/WIFI.jpg" width="3000" alt="3000">
+
+        <div class="centered-div">
+            <h1 style="color: white;">GRACIAS POR SU ATENCION</h1>
+        </div>
+
+    </section>
+
+
+    <div class="progress"></div>
+
+    <script src="node_modules/@shower/core/dist/shower.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+
+</html>
